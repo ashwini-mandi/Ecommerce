@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Col, Row } from "react-bootstrap";
+import { Button, Card, Col, Row } from "react-bootstrap";
 
 const productsArr = [
   {
@@ -26,23 +26,37 @@ const productsArr = [
 
 function ProductCards() {
   return (
-    <Row className="g-4">
-      {productsArr.map((product, index) => (
-        <Col key={index} xs={12} md={6} col-lg={3}>
-          <Card className="product-card h-100">
-            <Card.Img
-              variant="top"
-              src={product.imageUrl}
-              className="product-image"
-            />
-            <Card.Body>
-              <Card.Title>{product.title}</Card.Title>
-              <Card.Text>${product.price}</Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-      ))}
-    </Row>
+    <div className="container">
+      <Row className="g-4 justify-content-center mx-4">
+        {productsArr.map((product, index) => (
+          <Col
+            key={index}
+            md={6}
+            className="d-flex flex-column align-items-center"
+          >
+            <div className="fs-4">{product.title}</div>
+            <Card style={{ width: "16rem" }}>
+              <Card.Img
+                variant="top"
+                src={product.imageUrl}
+                className="product-image"
+              />
+            </Card>
+            <div
+              className="d-flex justify-content-between mt-4 px-2"
+              style={{
+                width: "16rem",
+              }}
+            >
+              <div>${product.price}</div>
+              <Button variant="primary" size="sm" bg="lightblue" active>
+                Add to cart
+              </Button>
+            </div>
+          </Col>
+        ))}
+      </Row>
+    </div>
   );
 }
 

@@ -1,6 +1,5 @@
 import { Button, Container, Navbar, Nav, Badge } from "react-bootstrap";
 import React from "react";
-import "../index.css";
 
 function NavBar() {
   return (
