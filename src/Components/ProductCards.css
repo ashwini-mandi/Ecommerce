@@ -1,0 +1,19 @@
+/* Assuming this is in your index.css or a custom CSS file */
+.product-card {
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05); /* Slightly enlarges the card */
+}
+
+.product-image {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  max-width: 100%; /* Limits the width to prevent it from coming out of the card */
+  max-height: 100%; /* Limits the height to prevent it from coming out of the card */
+  object-fit: cover; /* Ensures the image remains within the card boundaries */
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.1); /* Image zooms in slightly */
+}
