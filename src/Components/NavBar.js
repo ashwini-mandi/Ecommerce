@@ -4,12 +4,11 @@ import Context from "./Store/Context";
 
 function NavBar({ showCartHandler }) {
   const { items } = useContext(Context);
-  let totalQuantity = 0;
-  totalQuantity = items.reduce((acc, item) => acc + item.quantity, 0);
+  let totalQuantity = items.reduce((acc, item) => acc + item.quantity, 0);
   console.log(totalQuantity);
   return (
     <>
-      <Navbar bg="dark" expand="sm" variant="dark" className="py-1" fixed-top>
+      <Navbar bg="dark" expand="sm" variant="dark" className="py-1 fixed-top">
         <Container className="d-flex justify-content-center">
           <div className="d-flex justify-content-center flex-grow-1">
             <Nav className="d-flex justify-content-around w-25">
