@@ -6,20 +6,24 @@ function NavBar({ showCartHandler }) {
   const { items } = useContext(Context);
   let totalQuantity = items.reduce((acc, item) => acc + item.quantity, 0);
   console.log(totalQuantity);
+
   return (
     <>
       <Navbar bg="dark" expand="sm" variant="dark" className="py-1 fixed-top">
         <Container className="d-flex justify-content-center">
           <div className="d-flex justify-content-center flex-grow-1">
             <Nav className="d-flex justify-content-around w-25">
-              <Nav.Link href="#home" className="text-center text-white">
+              <Nav.Link href="/" className="text-center text-white">
                 HOME
               </Nav.Link>
-              <Nav.Link href="#Store" className="text-center text-light">
+              <Nav.Link href="/store" className="text-center text-light">
                 STORE
               </Nav.Link>
-              <Nav.Link href="#About" className="text-center text-light">
+              <Nav.Link href="/about" className="text-center text-light">
                 ABOUT
+              </Nav.Link>
+              <Nav.Link href="/contact" className="text-center text-light">
+                CONTACT US
               </Nav.Link>
             </Nav>
           </div>
